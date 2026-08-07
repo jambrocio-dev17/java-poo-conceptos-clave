@@ -1,0 +1,33 @@
+@startuml
+
+class Persona {
+  - nombre: String
+  - edad: int
+  + getNombre(): String
+  + setNombre(nombre: String): void
+  + getEdad(): int
+  + setEdad(edad: int): void
+}
+
+class Estudiante {
+  - carnet: String
+  - promedio: double
+  + getCarnet(): String
+  + setCarnet(carnet: String): void
+  + getPromedio(): double
+  + setPromedio(promedio: double): void
+}
+
+class Curso {
+  - nombreCurso: String
+  - codigo: String
+  + getNombreCurso(): String
+  + setNombreCurso(nombreCurso: String): void
+  + getCodigo(): String
+  + setCodigo(codigo: String): void
+}
+
+Persona <|-- Estudiante
+Estudiante "1" -- "many" Curso : cursa
+
+@enduml
