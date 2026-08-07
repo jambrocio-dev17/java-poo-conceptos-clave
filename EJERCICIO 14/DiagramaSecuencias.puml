@@ -1,0 +1,18 @@
+@startuml
+
+actor Usuario
+participant Sistema
+participant "Base de Datos" as BD
+
+Usuario -> Sistema : consultar información del estudiante
+Sistema -> BD : buscar estudiante
+
+alt Estudiante encontrado
+    BD -> Sistema : datos del estudiante
+    Sistema -> Usuario : mostrar información
+else No encontrado
+    BD -> Sistema : no existe
+    Sistema -> Usuario : mensaje de error
+end
+
+@enduml
